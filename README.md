@@ -1,4 +1,3 @@
-<div align="center">
 
 # Buff Catcher 🏁🎮  
 
@@ -40,5 +39,4 @@ Este proyecto está bajo la licencia MIT.
 
 ---
 
-</div>
 
