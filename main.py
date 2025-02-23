@@ -46,7 +46,7 @@ s.configure('TSeparator', background='#0d0d0d')
 border = ttk.Separator(bottom_frame, orient="horizontal")
 border.pack(fill="x", pady=2, padx=2)  
 
-img = ImageTk.PhotoImage(Image.open("Ony.png"))
+img = ImageTk.PhotoImage(Image.open(r"Assets/Ony.png"))
 panel = tk.Label(bottom_frame, image=img,bg="#f0f0f0")
 panel.pack(side=tk.LEFT, padx=5)
 

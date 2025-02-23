@@ -30,7 +30,7 @@ def search_image():
     time.sleep(30)
     try:
       region = (GetSystemMetrics(0) // 2, 0, GetSystemMetrics(0) // 2, GetSystemMetrics(1))  # Mitad derecha
-      location = pyautogui.locateCenterOnScreen("Ony.png", grayscale=True, confidence=0.9, region=region)
+      location = pyautogui.locateCenterOnScreen(r"Assets/Ony.png", grayscale=True, confidence=0.9, region=region)
 
       if location:
         print("Si que la hay en:", location)
