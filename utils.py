@@ -13,7 +13,7 @@ process_name = "WowClassic.exe"
 first_time = True
 
 def CloseProgram():
-    global stop_event
+    time.sleep(0.001)
     stop_event.set()
     os._exit(0)  # Salida segura del programa
 
@@ -21,7 +21,7 @@ def random_number():
     return random.uniform(0.5, 2)  # Evita valores extremadamente pequeños
 
 def keypress_action(secondary_frame, canvas, label=""):
-    global stop_event
+    time.sleep(0.001)
     if stop_event.is_set():
         return  # Si el evento está activado, detener la función
     if label and label != "":
@@ -45,7 +45,7 @@ def keypress_action(secondary_frame, canvas, label=""):
     secondary_frame.after(int(random_number() * 1000), lambda: keypress_action(secondary_frame, canvas))
     
 def search_image(terciary_frame, canvas_terciary, label2=""):
-  global stop_event
+  time.sleep(0.001)
   if stop_event.is_set():
     return  # Si el evento está activado, detener la función
 
@@ -98,7 +98,7 @@ def search_image(terciary_frame, canvas_terciary, label2=""):
     terciary_frame.after(30000, lambda: search_image(terciary_frame, canvas_terciary))
         
 def start_action(start_button, stop_button, secondary_frame, terciary_frame, canvas, canvas_terciary):
-    global stop_event
+    time.sleep(0.001)
     stop_event.clear()
 
     start_button.config(bg="#338525", activebackground="#235e19")
@@ -115,7 +115,6 @@ def start_action(start_button, stop_button, secondary_frame, terciary_frame, can
     label2.after(1000, lambda: search_image(terciary_frame, canvas_terciary, label2))
 
 def stop_action(start_button, secondary_frame,terciary_frame,stop_button):
-    global stop_event
     stop_event.set()  # Detiene el bucle en keypress_action
     for widget in secondary_frame.winfo_children():
         widget.destroy()
